@@ -1,0 +1,23 @@
+services:
+  api:
+    build: .
+    image: hr-policy-agent:latest
+    ports:
+      - "8000:8000"
+    environment:
+      OLLAMA_HOST: http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # needed on Linux; Docker Desktop already has it
+    restart: unless-stopped
+
+  web:
+    build: ./webapp
+    image: hr-policy-web:latest
+    ports:
+      - "5000:5000"
+    environment:
+      API_URL: http://api:8000                  # service name = hostname inside the compose network
+      FLASK_SECRET_KEY: change-me-in-production
+    depends_on:
+      - api
+    restart: unless-stopped

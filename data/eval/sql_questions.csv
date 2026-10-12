@@ -1,0 +1,31 @@
+difficulty,question,gold_sql
+easy,How many employees does the company have?,SELECT COUNT(*) FROM employees
+easy,How many employees work in Amsterdam?,SELECT COUNT(*) FROM employees WHERE office = 'Amsterdam'
+easy,How many people work fully remote?,SELECT COUNT(*) FROM employees WHERE work_mode = 'remote'
+easy,How many employees are in the Engineering department?,SELECT COUNT(*) FROM employees WHERE department = 'Engineering'
+easy,What is the job title of employee 1002?,SELECT job_title FROM employees WHERE employee_id = 1002
+easy,When was employee 1010 hired?,SELECT hire_date FROM employees WHERE employee_id = 1010
+easy,How many part-time employees are there?,SELECT COUNT(*) FROM employees WHERE fte < 1
+easy,How many leave requests are pending?,SELECT COUNT(*) FROM leave_requests WHERE status = 'pending'
+medium,How many annual leave days does employee 1005 have left in 2026?,SELECT entitled_days + carried_over_days - used_days FROM leave_balances WHERE employee_id = 1005 AND year = 2026
+medium,How many days were carried over by employee 1020?,SELECT carried_over_days FROM leave_balances WHERE employee_id = 1020 AND year = 2026
+medium,How many employees are there per country?,"SELECT country, COUNT(*) FROM employees GROUP BY country"
+medium,How many sick days were taken in total in 2026?,SELECT SUM(days) FROM leave_requests WHERE leave_type = 'sick' AND status = 'approved'
+medium,What is the total of approved travel expenses in EUR?,"SELECT ROUND(SUM(amount), 2) FROM expense_claims WHERE category = 'travel' AND status = 'approved' AND currency = 'EUR'"
+medium,How many expense claims were rejected?,SELECT COUNT(*) FROM expense_claims WHERE status = 'rejected'
+medium,What is the average annual leave entitlement in Germany?,"SELECT ROUND(AVG(b.entitled_days), 2) FROM leave_balances b JOIN employees e ON e.employee_id = b.employee_id WHERE e.country = 'DE' AND b.year = 2026"
+medium,Which department has the most employees?,SELECT department FROM employees GROUP BY department ORDER BY COUNT(*) DESC LIMIT 1
+medium,How many employees joined in 2026?,SELECT COUNT(*) FROM employees WHERE hire_date >= '2026-01-01'
+medium,Who is the manager of employee 1001? Give the first and last name.,"SELECT m.first_name, m.last_name FROM employees e JOIN employees m ON m.employee_id = e.manager_id WHERE e.employee_id = 1001"
+hard,How many employees report directly to employee 1177?,SELECT COUNT(*) FROM employees WHERE manager_id = 1177
+hard,How many hybrid or remote employees have claimed the home office allowance?,"SELECT COUNT(DISTINCT c.employee_id) FROM expense_claims c JOIN employees e ON e.employee_id = c.employee_id WHERE c.category = 'home_office' AND e.work_mode IN ('hybrid', 'remote')"
+hard,What is the highest number of annual leave days any employee has left in 2026?,SELECT MAX(entitled_days + carried_over_days - used_days) FROM leave_balances WHERE year = 2026
+hard,How many employees have used no annual leave at all in 2026?,SELECT COUNT(*) FROM leave_balances WHERE year = 2026 AND used_days = 0
+hard,What is the total approved training spend in INR?,"SELECT ROUND(SUM(amount), 2) FROM expense_claims WHERE category = 'training' AND status = 'approved' AND currency = 'INR'"
+hard,How many leave requests per leave type were approved?,"SELECT leave_type, COUNT(*) FROM leave_requests WHERE status = 'approved' GROUP BY leave_type"
+hard,How many Engineering employees in India work hybrid?,SELECT COUNT(*) FROM employees WHERE department = 'Engineering' AND country = 'IN' AND work_mode = 'hybrid'
+hard,What is the average number of days per approved annual leave request?,"SELECT ROUND(AVG(days), 2) FROM leave_requests WHERE leave_type = 'annual' AND status = 'approved'"
+hard,How many employees have more than 30 days of annual leave left in 2026?,SELECT COUNT(*) FROM leave_balances WHERE year = 2026 AND entitled_days + carried_over_days - used_days > 30
+hard,How many L5 or L6 employees are there in each office?,"SELECT office, COUNT(*) FROM employees WHERE level IN ('L5', 'L6') GROUP BY office"
+hard,What is the largest number of expense claims submitted by one employee?,SELECT MAX(n) FROM (SELECT COUNT(*) AS n FROM expense_claims GROUP BY employee_id)
+hard,How many pending annual leave days are there in total for Berlin employees?,SELECT SUM(r.days) FROM leave_requests r JOIN employees e ON e.employee_id = r.employee_id WHERE e.office = 'Berlin' AND r.leave_type = 'annual' AND r.status = 'pending'

@@ -1,0 +1,17 @@
+question,expected_route,route,correct,answer,latency_s
+What is the on-call allowance for engineers?,policy,policy,True,"Engineers on the on-call rota receive EUR 150 (INR 6,000) per on-call week [1].",1.95
+How many paid study days do I get for an exam?,policy,policy,True,Employees receive up to 3 paid study days per calendar year for exams or course attendance [1].,1.24
+By what time do I have to report sick?,policy,policy,True,You need to inform your manager by phone or chat before 10:00 on your first day of sickness [1].,1.32
+Can I act as a mentor in the mentoring programme?,policy,policy,False,I don't know based on the HR policies.,1.18
+"If I forget to submit receipts, what is the deadline for expense claims?",policy,policy,False,I don't know based on the HR policies.,1.08
+What is the notice period in India if I resign?,policy,policy,True,The notice period in India if an employee resigns is 2 months [1].,1.36
+How many annual leave days do I have left?,data,data,True,You have 14 annual leave days left.,1.84
+What is the total of my approved meal claims?,data,data,True,The total of your approved meal claims is €98.55.,2.1
+What is my FTE?,data,data,True,Your FTE is 0.8.,1.46
+When did I start at Northwind?,data,data,True,You started at Northwind on 2023-11-12.,1.69
+How many study days have I taken this year?,data,data,True,You have taken 3 study days this year.,1.87
+"Have I claimed my home office allowance, and how much is it in my country?",both,both,True,You have claimed your home office allowance. The amount in the Netherlands is EUR 500 [1].,2.77
+"How many annual leave days have I used, and how many days of annual leave does India give?",both,both,True,You have used 9 annual leave days. India gives 21 working days of annual leave [1].,2.65
+"How much have I claimed for training this year, and what is my yearly learning budget?",both,both,True,"You have claimed EUR 2,506.43 for training this year. Your yearly learning budget is EUR 1,500 [1].",4.47
+Recommend a good restaurant in Amsterdam.,out_of_scope,out_of_scope,True,I can only help with questions about Northwind HR policies and your HR data.,0.54
+What was the score of the last Ajax match?,out_of_scope,out_of_scope,True,I can only help with questions about Northwind HR policies and your HR data.,0.46

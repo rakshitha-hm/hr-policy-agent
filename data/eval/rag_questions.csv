@@ -1,0 +1,53 @@
+question,key_facts,source,answerable
+How many vacation days do Dutch employees get?,25,01_annual_leave.md,1
+What is the yearly leave allowance in Germany?,28,01_annual_leave.md,1
+How much annual leave do staff in India get?,21,01_annual_leave.md,1
+Do I get extra holiday for long service?,5 years;five years;5 full years,01_annual_leave.md,1
+How is leave calculated if I work part-time?,pro rata;proportion;fte,01_annual_leave.md,1
+How far ahead must I book a three-week holiday?,6 weeks;six weeks,01_annual_leave.md,1
+How many unused days can I take into next year?,5 days;five days;5 unused,01_annual_leave.md,1
+When do carried-over leave days expire?,31 march,01_annual_leave.md,1
+Is leftover vacation paid out when I quit?,paid out;final salary,01_annual_leave.md,1
+How many public holidays does the Berlin office have?,10,01_annual_leave.md,1
+By what time must I report that I am sick?,10:00;10 am;10am,02_sick_leave.md,1
+Do I need a doctor's note when I am sick in Germany?,4th;fourth,02_sick_leave.md,1
+Who contacts me if I am sick for over a week in the Netherlands?,company doctor;arbodienst,02_sick_leave.md,1
+How long do I get full pay when sick in the Netherlands?,52 weeks;first year;one year,02_sick_leave.md,1
+How many paid sick days per year do employees in India get?,12,02_sick_leave.md,1
+What happens if I fall ill during my holiday?,returned;converted;restored;back to your annual leave,02_sick_leave.md,1
+How long is maternity leave?,16 weeks;sixteen weeks,03_parental_and_family_leave.md,1
+How much paternity leave do partners get?,6 weeks;six weeks,03_parental_and_family_leave.md,1
+How long must I work here before I get paid parental leave?,6 months;six months,03_parental_and_family_leave.md,1
+How many days off do I get when a parent dies?,5 working days;5 days;five days,03_parental_and_family_leave.md,1
+Can I take time off to look after my sick child?,5 paid days;5 days;five days,03_parental_and_family_leave.md,1
+Can I take a sabbatical?,3 months;three months,03_parental_and_family_leave.md,1
+Can I work fewer hours when I come back from parental leave?,20%;20 percent,03_parental_and_family_leave.md,1
+How many days a week must hybrid staff be in the office?,2 days;two days,04_remote_and_hybrid_work.md,1
+How much is the home office allowance in India?,"25,000;25000",04_remote_and_hybrid_work.md,1
+Who can claim the home office set-up allowance?,hybrid,04_remote_and_hybrid_work.md,1
+Do hybrid employees get an internet allowance?,not,04_remote_and_hybrid_work.md,1
+Can I work from another country for a while?,20 working days;20 days;twenty,04_remote_and_hybrid_work.md,1
+What should I do if my laptop is stolen?,service desk;24 hours,04_remote_and_hybrid_work.md,1
+How long do I have to submit an expense claim?,30 days;thirty days,05_travel_and_expenses.md,1
+Who approves an expense of 3000 euros?,director,05_travel_and_expenses.md,1
+Can I fly business class?,not,05_travel_and_expenses.md,1
+What is the hotel limit per night in Amsterdam?,200,05_travel_and_expenses.md,1
+How much can I spend on food per day when travelling in India?,"3,000;3000",05_travel_and_expenses.md,1
+What is the mileage rate in Germany?,0.30;0.3,05_travel_and_expenses.md,1
+What is my yearly training budget in the Netherlands?,"1,500;1500",06_learning_and_development.md,1
+How many days off do I get to study for an exam?,3 paid study days;3 days;three days;3 study days,06_learning_and_development.md,1
+Do I need to repay an expensive course if I quit within a year?,100%;in full;full cost;full amount,06_learning_and_development.md,1
+What are the core working hours?,15:00;3 pm;3pm,07_working_hours_and_overtime.md,1
+Do senior staff get compensated for overtime?,no overtime compensation;not;no compensation,07_working_hours_and_overtime.md,1
+How much do engineers get for being on call?,150,07_working_hours_and_overtime.md,1
+What is the notice period if I resign in India?,2 months;two months,07_working_hours_and_overtime.md,1
+What is the maximum value of a gift I can accept from a client?,50,08_code_of_conduct.md,1
+Am I allowed to run a side business?,declare;allowed,08_code_of_conduct.md,1
+Who do I tell about a suspected data leak?,dpo@;data protection officer,08_code_of_conduct.md,1
+Can I report misconduct anonymously?,speak up,08_code_of_conduct.md,1
+What is the dress code at the office?,,,0
+Can I bring my dog to work?,,,0
+How much is the Christmas bonus?,,,0
+Do employees get a gym membership discount?,,,0
+How do I reset my VPN password?,,,0
+What is Northwind's share price today?,,,0

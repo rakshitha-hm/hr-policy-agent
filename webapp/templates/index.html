@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Northwind HR Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+  <h1>Northwind HR Assistant</h1>
+  {% if employee_id %}
+  <form method="post" action="{{ url_for('logout') }}" class="user">
+    <span>Signed in as <strong>{{ user_name }}</strong> ({{ employee_id }})</span>
+    <button type="submit" class="link">Sign out</button>
+  </form>
+  {% endif %}
+</header>
+
+<main>
+{% if not employee_id %}
+  <section class="card">
+    <h2>Sign in</h2>
+    <p class="muted">Demo login: pick an employee. In a real company this would be single sign-on.</p>
+    <form method="post" action="{{ url_for('login') }}">
+      <select name="employee_id">
+        {% for id, name in users.items() %}
+        <option value="{{ id }}">{{ id }}: {{ name }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Sign in</button>
+    </form>
+  </section>
+{% else %}
+  <section id="messages" class="messages">
+    <div class="msg bot">Hi! Ask me about Northwind HR policies or your own leave and expenses.</div>
+  </section>
+
+  <div class="examples">
+    {% for q in examples %}
+    <button type="button" class="chip">{{ q }}</button>
+    {% endfor %}
+  </div>
+
+  <form id="ask" class="ask">
+    <input id="question" maxlength="500" autocomplete="off" placeholder="Type your question..." required>
+    <button type="submit" id="send">Ask</button>
+  </form>
+{% endif %}
+</main>
+
+<script>
+const form = document.getElementById("ask");
+if (form) {
+  const box = document.getElementById("messages");
+  const input = document.getElementById("question");
+  const send = document.getElementById("send");
+
+  function add(text, cls) {
+    const div = document.createElement("div");
+    div.className = "msg " + cls;
+    div.textContent = text;                       // textContent, not innerHTML: no HTML injection
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+    return div;
+  }
+
+  async function ask(question) {
+    add(question, "user");
+    const waiting = add("Thinking...", "bot pending");
+    send.disabled = true;
+    try {
+      const resp = await fetch("{{ url_for('chat') }}", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({question})
+      });
+      const data = await resp.json();
+      waiting.remove();
+      if (!resp.ok) { add(data.error || "Something went wrong.", "bot error"); return; }
+      const msg = add(data.answer, "bot");
+      const meta = document.createElement("div");
+      meta.className = "meta";
+      const sources = data.citations.map(c => c.source + " > " + c.section).join("; ");
+      meta.textContent = "route: " + data.route + " · " + data.latency_ms + " ms" + (sources ? " · sources: " + sources : "");
+      msg.appendChild(meta);
+    } catch (e) {
+      waiting.remove();
+      add("Could not reach the server.", "bot error");
+    } finally {
+      send.disabled = false;
+      input.focus();
+    }
+  }
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const q = input.value.trim();
+    if (q) { input.value = ""; ask(q); }
+  });
+  document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => ask(b.textContent)));
+}
+</script>
+</body>
+</html>

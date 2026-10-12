@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.pytest_cache/
+.ipynb_checkpoints/
+.vscode/
+data/raw/
+data/chroma/
+.venv/
+__pycache__/
+.env

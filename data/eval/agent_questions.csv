@@ -1,0 +1,27 @@
+question,employee_id,expected_route,key_facts
+How long is maternity leave?,1005,policy,16 weeks;sixteen weeks
+What is the hotel limit per night in Amsterdam?,1005,policy,200
+How many days a week must hybrid staff be in the office?,1005,policy,2 days;two days
+When do carried-over leave days expire?,1005,policy,31 march
+What is the maximum value of a gift I can accept from a client?,1005,policy,50
+How long do I have to submit an expense claim?,1005,policy,30 days;thirty days
+Can I take a sabbatical?,1005,policy,3 months;three months
+What is the mileage rate in Germany?,1005,policy,0.30;0.3
+How many annual leave days do I have left this year?,1005,data,20
+How many annual leave days have I used this year?,1005,data,11
+When did I join the company?,1010,data,2017
+How many leave days did I carry over from last year?,1042,data,5
+Which department do I work in?,1020,data,finance
+What is the total of my approved travel expenses?,1005,data,679.01;679
+Who is my manager?,1001,data,aylin
+How many employees work in the Berlin office?,1033,data,41
+"How many leave days do I have left, and can I carry unused days into next year?",1005,both,20|5 days;five days;5 unused
+"How much of my training budget have I used this year, and how big is the budget?",1042,both,"792.12;792|1,500;1500"
+"I work part-time. How much annual leave do I have left, and how is part-time leave calculated?",1010,both,16.5|pro rata;proportion;fte
+"How many annual leave days am I entitled to this year, and what is the base entitlement in my country?",1001,both,29|28
+"Am I eligible for the home office allowance, and how much is it?",1042,both,500
+"How much have I claimed for meals, and what is the daily meal limit when travelling in India?",1020,both,"6713.88;6,713.88;6713.9;6,713.9|3,000;3000"
+What is the weather in Amsterdam today?,1005,out_of_scope,
+Write me a poem about Mondays.,1005,out_of_scope,
+What is the capital of France?,1005,out_of_scope,
+Who will win the next football World Cup?,1005,out_of_scope,

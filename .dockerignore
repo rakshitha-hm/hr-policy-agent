@@ -1,0 +1,8 @@
+.venv/
+.git/
+__pycache__/
+*.pyc
+data/chroma/
+data/hr.db
+reports/
+.env

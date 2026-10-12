@@ -1,0 +1,3 @@
+system,answer_accuracy,false_refusals,citation_accuracy,faithfulness,unanswerable_refused,avg_prompt_tokens,avg_latency_s
+rag_top5,0.9565217391304348,0.043478260869565216,1.0,1.0,1.0,529,0.7
+full_handbook,0.8913043478260869,0.08695652173913043,0.6666666666666666,0.9047619047619048,1.0,4635,0.72
